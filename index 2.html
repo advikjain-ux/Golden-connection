@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#245c48">
+<title>Golden Connections</title>
+<style>
+:root{--green:#245c48;--green2:#36785f;--cream:#fbf7ee;--gold:#e8bd65;--ink:#20352d;--muted:#64736b;--line:#dce5dc;--scale:1}
+*{box-sizing:border-box}html{font-size:calc(16px * var(--scale));scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:4px solid #e8bd65;outline-offset:3px}
+.app{max-width:820px;min-height:100vh;margin:auto;padding-bottom:28px}
+header{background:var(--green);color:white;padding:20px 18px;border-radius:0 0 24px 24px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{width:48px;height:48px;border-radius:15px;background:var(--gold);display:grid;place-items:center;font-size:1.6rem;flex-shrink:0}
+h1{font-size:1.4rem;line-height:1.2;margin:0}.tag{margin:4px 0 0;color:#e0eee5;font-size:.9rem}
+#fontToggle{background:white;color:var(--green);border:2px solid white;border-radius:14px;padding:10px 12px;min-height:48px;font-weight:800;white-space:nowrap}
+#fontNote{display:none;color:#fff4d7;font-weight:700;margin:10px 0 0}body.large #fontNote{display:block}
+main{padding:18px 16px}.welcome{background:#f1e4c8;border:1px solid #ead6aa;border-radius:20px;padding:18px;margin-bottom:18px}
+h2{font-size:1.4rem;line-height:1.3;margin:0 0 6px}.welcome p{margin:0}
+nav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 22px}
+nav button{background:white;color:var(--green);border:2px solid var(--line);border-radius:14px;padding:11px 5px;font-weight:750;min-height:54px}
+nav button.active{background:var(--green);color:white;border-color:var(--green)}
+.view{display:none}.view.active{display:block}.sub{color:var(--muted);margin:0 0 16px}.grid{display:grid;gap:12px}
+.card{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 3px 12px #20352d0a}
+.person,.event{display:flex;gap:13px;align-items:flex-start}.avatar,.eventicon{width:58px;height:58px;flex-shrink:0;display:grid;place-items:center;border-radius:18px;background:#e4efdf;font-size:1.8rem}
+.eventicon{background:#f8ebcf}.card h3{margin:0 0 4px;font-size:1.12rem;line-height:1.35}.card p{margin:4px 0 0}
+.pill{display:inline-block;background:#e8f1e8;color:var(--green);border-radius:999px;padding:4px 10px;margin-top:9px;font-size:.84rem;font-weight:700}
+.meta,.small{color:var(--muted);font-size:.92rem}.btn{display:flex;justify-content:center;align-items:center;width:100%;min-height:50px;margin-top:14px;padding:11px 15px;border-radius:13px;border:2px solid var(--green);background:var(--green);color:white;font-weight:800;text-align:center}
+.btn.secondary{background:white;color:var(--green)}.notice{background:#e8f1e8;border-radius:12px;padding:12px;margin-top:14px;color:var(--green);font-weight:700}
+.empty{text-align:center;padding:24px 16px;color:var(--muted);background:white;border:2px dashed var(--line);border-radius:18px}
+footer{text-align:center;padding:0 18px 20px;color:var(--muted);font-size:.86rem}
+@media(max-width:440px){nav{grid-template-columns:repeat(2,1fr)}header{padding:16px 14px}#fontToggle{padding:9px 10px}h1{font-size:1.2rem}.tag{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="top"><div class="brand"><div class="logo" aria-hidden="true">🤝</div><div><h1>Golden Connections</h1><p class="tag">Friendship, activities and community</p></div></div><button id="fontToggle" type="button" aria-pressed="false">A+ Bigger text</button></div><p id="fontNote" aria-live="polite">Large text is on. Tap “A− Normal text” to switch back.</p></header>
+<main>
+<section class="welcome"><h2>Good day! 👋</h2><p>Meet friendly people, discover enjoyable activities, and feel more connected to your community.</p></section>
+<nav aria-label="Main navigation"><button class="active" data-view="home" aria-current="page">🏡 Home</button><button data-view="friends">🧑‍🤝‍🧑 Find Friends</button><button data-view="activities">🎨 Activities</button><button data-view="mine">❤️ My Activities</button></nav>
+<section class="view active" id="home"><h2>You’re welcome here</h2><p class="sub">Small steps can lead to wonderful friendships.</p><div class="grid">
+<article class="card"><div class="person"><div class="avatar">😊</div><div><h3>Meet new friends</h3><p>Discover people who enjoy similar hobbies and conversations.</p></div></div><button class="btn" data-go="friends">Find Friends</button></article>
+<article class="card"><div class="person"><div class="avatar">🌻</div><div><h3>Try something enjoyable</h3><p>Explore relaxed group activities, from gardening to board games.</p></div></div><button class="btn" data-go="activities">Browse Activities</button></article></div>
+<div class="notice">School-project demo: all people and activities shown are examples, not real listings.</div></section>
+<section class="view" id="friends"><h2>Find Friends</h2><p class="sub">Example profiles showing how this feature could work.</p><div class="grid">
+<article class="card"><div class="person"><div class="avatar">👩🏻</div><div><h3>Mei Ling, 68</h3><p>Enjoys gardening, cooking and sharing stories over tea.</p><span class="pill">Gardening · Tea</span></div></div><button class="btn secondary" data-profile="Mei Ling">View example profile</button></article>
+<article class="card"><div class="person"><div class="avatar">👴🏼</div><div><h3>Mr. Tan, 72</h3><p>Loves chess, walks in the park and old movies.</p><span class="pill">Chess · Walking</span></div></div><button class="btn secondary" data-profile="Mr. Tan">View example profile</button></article>
+<article class="card"><div class="person"><div class="avatar">👵🏽</div><div><h3>Aunty Grace, 65</h3><p>Likes music, simple crafts and meeting new people.</p><span class="pill">Music · Crafts</span></div></div><button class="btn secondary" data-profile="Aunty Grace">View example profile</button></article></div><div id="profileNotice" class="notice" hidden aria-live="polite"></div></section>
+<section class="view" id="activities"><h2>Activities near you</h2><p class="sub">Choose an activity you would like to attend. These are sample events for the prototype.</p><div class="grid" id="eventList"></div></section>
+<section class="view" id="mine"><h2>My Activities</h2><p class="sub">Activities you join in this demo appear here on this device.</p><div class="grid" id="joinedList"></div></section>
+</main><footer>Golden Connections · A friendship app concept for older adults</footer></div>
+<script>
+(function(){
+const html=document.documentElement, fontButton=document.getElementById('fontToggle');let large=false;
+fontButton.addEventListener('click',()=>{large=!large;html.style.setProperty('--scale',large?'1.35':'1');document.body.classList.toggle('large',large);fontButton.textContent=large?'A− Normal text':'A+ Bigger text';fontButton.setAttribute('aria-pressed',String(large));});
+const views=[...document.querySelectorAll('.view')],nav=[...document.querySelectorAll('[data-view]')];
+function showView(id){views.forEach(v=>v.classList.toggle('active',v.id===id));nav.forEach(b=>{let active=b.dataset.view===id;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});window.scrollTo({top:0,behavior:'smooth'});}
+nav.forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.go)));
+document.querySelectorAll('[data-profile]').forEach(b=>b.addEventListener('click',()=>{let n=document.getElementById('profileNotice');n.hidden=false;n.textContent=b.dataset.profile+' is a fictional sample profile. A real app would only show profiles from people who chose to participate.';}));
+const events=[
+{id:'tea',icon:'🍵',title:'Tea & Friendly Chats',date:'Tuesday · 10:00 AM',place:'Community lounge',desc:'Enjoy a warm drink and relaxed conversation.'},
+{id:'garden',icon:'🌱',title:'Easy Gardening Club',date:'Thursday · 9:30 AM',place:'Community garden',desc:'Plant herbs and share simple gardening tips.'},
+{id:'games',icon:'🀄',title:'Board Games & Mahjong',date:'Friday · 2:00 PM',place:'Activity room',desc:'Play games together and make new connections.'},
+{id:'crafts',icon:'🎨',title:'Art & Craft Afternoon',date:'Saturday · 1:30 PM',place:'Community hall',desc:'Try a relaxed creative activity at your own pace.'}];
+const key='goldenConnectionsJoinedEvents';
+function joined(){try{let a=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(a)?a:[]}catch(e){return[]}}
+function save(a){try{localStorage.setItem(key,JSON.stringify(a))}catch(e){}}
+function renderEvents(){let list=document.getElementById('eventList'),ids=joined();list.innerHTML='';events.forEach(e=>{let yes=ids.includes(e.id),card=document.createElement('article');card.className='card';card.innerHTML='<div class="event"><div class="eventicon">'+e.icon+'</div><div><h3>'+e.title+'</h3><p>'+e.desc+'</p><p class="meta"><strong>'+e.date+'</strong><br>'+e.place+'</p></div></div><button class="btn '+(yes?'secondary':'')+'" data-event="'+e.id+'">'+(yes?'✓ Joined — tap to leave':'Join this activity')+'</button>';list.appendChild(card)});list.querySelectorAll('[data-event]').forEach(b=>b.addEventListener('click',()=>{let a=joined(),id=b.dataset.event;a=a.includes(id)?a.filter(x=>x!==id):a.concat(id);save(a);renderEvents();renderMine()}));}
+function renderMine(){let list=document.getElementById('joinedList'),chosen=events.filter(e=>joined().includes(e.id));list.innerHTML='';if(!chosen.length){list.innerHTML='<div class="empty"><p style="font-size:1.2em;margin:0 0 8px">No activities joined yet</p><p>When you join an activity, it will appear here.</p><button class="btn" data-browse>Browse Activities</button></div>';list.querySelector('[data-browse]').addEventListener('click',()=>showView('activities'));return;}chosen.forEach(e=>{let card=document.createElement('article');card.className='card';card.innerHTML='<div class="event"><div class="eventicon">'+e.icon+'</div><div><h3>'+e.title+'</h3><p>'+e.date+'</p><p class="small">'+e.place+'</p></div></div><button class="btn secondary" data-leave="'+e.id+'">Leave activity</button>';list.appendChild(card)});list.querySelectorAll('[data-leave]').forEach(b=>b.addEventListener('click',()=>{save(joined().filter(id=>id!==b.dataset.leave));renderEvents();renderMine()}));}
+renderEvents();renderMine();
+})();
+</script>
+</body>
+</html>
